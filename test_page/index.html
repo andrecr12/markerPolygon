@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=7; IE=EmulateIE9; IE=10"/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+        
+        <!--<script src="http://js.api.here.com/se/2.5.4/jsl.js" type="text/javascript" charset="utf-8"></script>-->
+        
+        <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+        <script type="text/javascript" charset="utf-8">
+            
+            // nokia.Settings.set("app_id", "DemoAppId01082013GAL");
+            // nokia.Settings.set("app_code", "AJKnXv84fjrb0KIHawS0Tg");
+            
+            
+            $(function(){
+                var platform = new H.service.Platform({
+                    app_id: 'DemoAppId01082013GAL',
+                    app_code: 'AJKnXv84fjrb0KIHawS0Tg',
+                    useCIT: true,
+                    useHTTPS: true
+                });
+                var defaultLayers = platform.createDefaultLayers();
+                
+                var map = new H.Map(document.getElementById('map'), defaultLayers.normal.map);
+                var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+                map.setCenter({lat:52.5159, lng:13.3777});
+                map.setZoom(12);
+            });
+        </script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <h1 id="">MarkerPolygon for HERE Maps</h1>
+                <a href="#" id="github-link">
+                    <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+                    <span class="github-label">andrecr12</span>
+                </a>
+            </div>
+        </header>
+        <div id="container">
+            <div id="map">
+                
+            </div>
+        </div>
+    </body>
+</html>
